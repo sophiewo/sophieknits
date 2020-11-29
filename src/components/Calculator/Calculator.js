@@ -2,10 +2,23 @@ import React, { Component } from 'react';
 
 class Calculator extends Component {
 
-  state = {
-    startCount: null,
-    endCount: null
+  constructor(props) {
+    super(props);
+    this.state = {
+      startCount: null,
+      endCount: null,
+      showResult: false
+    }
+
+    this.handleClick = this.handleClick.bind(this);
   }
+
+  handleClick() {
+    this.setState(state => ({
+      showResult: !state.showResult
+    }));
+  }
+
 
   startCountHandler = (event) => {
     this.setState(
@@ -19,13 +32,20 @@ class Calculator extends Component {
     )
   }
 
-  submitHandler = () => {
-    alert ("Start at " + this.state.startCount + " stitches, decrease to " + this.state.endCount + " stitches?")
-  }
-
   render() {
+
+    let result = ''
+    if (this.state.showResult === true) {
+
+      result = (
+        <div> 
+          <p> Start at {this.state.startCount} stitches, decrease to {this.state.endCount} stitches? </p>
+        </div>
+      )
+    }
+
     return (
-      <form onSubmit={this.submitHandler}>
+      <div>
         <label>
           Starting Stich Count:
           <input
@@ -41,10 +61,12 @@ class Calculator extends Component {
             value={this.state.endCount}
             onChange={this.endCountHandler} />
         </label>
-        <input type="submit" value="Calculate Decrease" />
-      </form>
+        <button onClick={this.handleClick}>
+          Calculate Decrease
+        </button>
+        {result}
+      </div>
 
-      
     )
   }
 }
