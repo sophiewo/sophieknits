@@ -5,8 +5,8 @@ class Calculator extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      startCount: null,
-      endCount: null,
+      startCount: "",
+      endCount: "",
       showResult: false
     }
 
@@ -14,9 +14,9 @@ class Calculator extends Component {
   }
 
   handleClick() {
-    this.setState(state => ({
-      showResult: !state.showResult
-    }));
+    this.setState( {
+      showResult: true }
+    )
   }
 
 
@@ -36,7 +36,6 @@ class Calculator extends Component {
 
     let result = ''
     if (this.state.showResult === true) {
-
       result = (
         <div> 
           <p> Start at {this.state.startCount} stitches, decrease to {this.state.endCount} stitches? </p>
@@ -46,6 +45,7 @@ class Calculator extends Component {
 
     return (
       <div>
+        <h1> Stitch Decrease Calculator </h1>
         <label>
           Starting Stich Count:
           <input
@@ -66,7 +66,6 @@ class Calculator extends Component {
         </button>
         {result}
       </div>
-
     )
   }
 }
