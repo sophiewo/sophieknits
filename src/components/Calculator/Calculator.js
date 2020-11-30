@@ -12,7 +12,6 @@ class Calculator extends Component {
     }
 
     this.handleClick = this.handleClick.bind(this);
-    // this.onChange = this.onChange.bind(this)
   }
 
   handleClick() {
@@ -24,21 +23,21 @@ class Calculator extends Component {
   }
 
   startCountHandler = (event) => {
+    let startCount = parseInt(event.target.value)
     this.setState(
-      { startCount: event.target.value }
+      { startCount: startCount }
     )
   }
 
  endCountHandler = (event) => {
+   let endCount = parseInt(event.target.value)
     this.setState(
-      { endCount: event.target.value }
+      { endCount: endCount }
     )
   }
 
   calculateDecrease = () => {
-    let a = parseInt(this.state.startCount)
-    let b = parseInt(this.state.endCount)
-    this.setState({solution: a + b } )
+    this.setState({solution: this.state.startCount + this.state.endCount } )
   }
 
   render() {
