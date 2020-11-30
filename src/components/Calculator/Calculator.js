@@ -44,18 +44,36 @@ class Calculator extends Component {
     )
   }
 
-  calculateDecrease = () => {
-
+calculateDecrease = () => {
+    // 20 - 5
     let start = this.state.startCount
     let end = this.state.endCount
-    let decrease = ( start - end )
-  console.log(start % decrease)
-    if ( start % decrease === 0 ) {
-      let result = " K2TOG * " + (decrease) 
-      this.setState(
-        { solution: result}
-      )
-    }
+    let decrease = start - end // 15
+    let remainder = start % decrease // 5
+    let totalSegments = Math.floor(start / decrease)  // 1
+    let repeat1 = decrease - remainder
+    let stitches1 = totalSegments - 2
+    let repeat2 = remainder
+    let stitches2 = totalSegments - 1
+
+    console.log(decrease)
+    console.log(remainder)
+    console.log(totalSegments)
+    console.log(repeat1)
+    console.log(stitches1)
+    console.log(repeat2)
+    console.log(stitches2)
+
+
+   let solution = (`[ k${stitches1}, k2tog ] repeat x ${repeat1}times, [ k${stitches2}, k2tog] repeat x ${repeat2}times`)
+
+    // if ( start % decrease === 0 ) {
+    //   result = "K2TOG * " + (decrease)
+    // } else { 
+  
+    this.setState(
+      { solution: solution }
+    )
   }
 
   render() {
