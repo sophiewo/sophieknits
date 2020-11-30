@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Calculator extends Component {
+class DecreaseCalculator extends Component {
 
   constructor(props) {
     super(props);
@@ -115,4 +115,4 @@ calculateDecrease = () => {
   }
 }
 
-export default Calculator;
+export default DecreaseCalculator;
