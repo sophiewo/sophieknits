@@ -55,21 +55,26 @@ calculateDecrease = () => {
     let stitches1 = totalSegments - 2
     let repeat2 = remainder
     let stitches2 = totalSegments - 1
+    let solution = ''
 
-    console.log(decrease)
-    console.log(remainder)
-    console.log(totalSegments)
-    console.log(repeat1)
-    console.log(stitches1)
-    console.log(repeat2)
-    console.log(stitches2)
+    if ( end === start / 2 ) {
+        solution = `[ k2tog ] x ${decrease}times`  
+    } else if (repeat1 === 1 && repeat2 > 1) {
+        solution = (`[ k${stitches1}, k2tog ], [ k${stitches2}, k2tog ] x ${repeat2}times`)
+    } else if (repeat1 === 0 && repeat2 > 1) {
+      solution = (`[ k${stitches2}, k2tog ] x ${repeat2}times`)
+    } else if (repeat1 > 1 && repeat2 === 0) {
+      solution = (`[ k${stitches1}, k2tog ] x ${repeat1}times`)
+    } else if (repeat1 > 1 && repeat2 === 1) {
+        solution = (`[ k${stitches1}, k2tog ] x ${repeat1}times, [ k${stitches2}, k2tog ]`)
+    } else if (stitches1 === 0) {
+        solution = (`[ k2tog ] x ${repeat1}times, [ k${stitches2}, k2tog ]`)
+    } else if (stitches2 === 0) {
+      solution = (`[ k${stitches1}, k2tog ] x ${repeat1}times, [ k2tog ] x ${repeat2}times`)
+    } else {
+      solution = (`[ k${stitches1}, k2tog ] x ${repeat1}times, [ k${stitches2}, k2tog ] x ${repeat2}times`)
+}
 
-
-   let solution = (`[ k${stitches1}, k2tog ] repeat x ${repeat1}times, [ k${stitches2}, k2tog] repeat x ${repeat2}times`)
-
-    // if ( start % decrease === 0 ) {
-    //   result = "K2TOG * " + (decrease)
-    // } else { 
   
     this.setState(
       { solution: solution }
@@ -98,7 +103,7 @@ calculateDecrease = () => {
             value={this.state.startCount}
             onChange={this.startCountHandler} />
         </label>
-
+        <br></br>
         <label>
           End Stich Count:
           <input
@@ -106,6 +111,7 @@ calculateDecrease = () => {
             value={this.state.endCount}
             onChange={this.endCountHandler} />
         </label>
+        <br></br>
         <button onClick={this.handleClick}>
           Calculate Decrease
         </button>
