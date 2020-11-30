@@ -5,20 +5,35 @@ class Calculator extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      startCount: "",
-      endCount: "",
-      showResult: false
+      startCount: 0,
+      endCount: 0,
+      showResult: false,
+      solution: 0
     }
 
     this.handleClick = this.handleClick.bind(this);
+    // this.onChange = this.onChange.bind(this)
   }
 
   handleClick() {
     this.setState( {
       showResult: true }
     )
+    this.calculateDecrease()
+    
   }
 
+  // onChange(e) {
+  //   const re = /^[0-9\b]+$/;
+  //   if (e.target.value === '' || re.test(e.target.value)) {
+  //     this.setState({ startCount: e.target.value })
+  //   }
+  // }
+
+  // stringToInt = () => {
+  //  let a = parseInt(this.endCount)
+  //  console.log(a)
+  // }
 
   startCountHandler = (event) => {
     this.setState(
@@ -32,6 +47,12 @@ class Calculator extends Component {
     )
   }
 
+  calculateDecrease = () => {
+    let a = parseInt(this.state.startCount)
+    let b = parseInt(this.state.endCount)
+    this.setState({solution: a + b } )
+  }
+
   render() {
 
     let result = ''
@@ -39,6 +60,7 @@ class Calculator extends Component {
       result = (
         <div> 
           <p> Start at {this.state.startCount} stitches, decrease to {this.state.endCount} stitches? </p>
+          <h2> {this.state.solution} </h2>
         </div>
       )
     }
@@ -49,7 +71,7 @@ class Calculator extends Component {
         <label>
           Starting Stich Count:
           <input
-            type="integer"
+            type="text"
             value={this.state.startCount}
             onChange={this.startCountHandler} />
         </label>
@@ -57,7 +79,7 @@ class Calculator extends Component {
         <label>
           End Stich Count:
           <input
-            type="integer"
+            type="text"
             value={this.state.endCount}
             onChange={this.endCountHandler} />
         </label>
