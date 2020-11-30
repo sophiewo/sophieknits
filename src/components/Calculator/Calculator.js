@@ -18,14 +18,22 @@ class Calculator extends Component {
     this.setState( {
       showResult: true }
     )
+    this.stitchParser()
     this.calculateDecrease()
     
   }
 
-  startCountHandler = (event) => {
-    let startCount = parseInt(event.target.value)
+  stitchParser = () => {
+    let startCount = parseInt(this.state.startCount)
+    let endCount = parseInt(this.state.endCount)
     this.setState(
-      { startCount: startCount }
+      { startCount: startCount, endCount: endCount }
+    )
+  }
+
+  startCountHandler = (event) => {
+    this.setState(
+      { startCount: event.target.value }
     )
   }
 
@@ -37,7 +45,17 @@ class Calculator extends Component {
   }
 
   calculateDecrease = () => {
-    this.setState({solution: this.state.startCount + this.state.endCount } )
+
+    let start = this.state.startCount
+    let end = this.state.endCount
+    let decrease = ( start - end )
+  console.log(start % decrease)
+    if ( start % decrease === 0 ) {
+      let result = " K2TOG * " + (decrease) 
+      this.setState(
+        { solution: result}
+      )
+    }
   }
 
   render() {
