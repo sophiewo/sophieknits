@@ -5,8 +5,8 @@ class Calculator extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      startCount: 0,
-      endCount: 0,
+      startCount: "",
+      endCount: "",
       showResult: false,
       solution: 0
     }
@@ -22,18 +22,6 @@ class Calculator extends Component {
     this.calculateDecrease()
     
   }
-
-  // onChange(e) {
-  //   const re = /^[0-9\b]+$/;
-  //   if (e.target.value === '' || re.test(e.target.value)) {
-  //     this.setState({ startCount: e.target.value })
-  //   }
-  // }
-
-  // stringToInt = () => {
-  //  let a = parseInt(this.endCount)
-  //  console.log(a)
-  // }
 
   startCountHandler = (event) => {
     this.setState(
