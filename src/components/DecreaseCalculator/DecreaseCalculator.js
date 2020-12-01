@@ -45,7 +45,7 @@ class DecreaseCalculator extends Component {
   }
 
 calculateDecrease = () => {
-    // 20 - 5
+
     let start = this.state.startCount
     let end = this.state.endCount
     let decrease = start - end // 15
@@ -87,8 +87,8 @@ calculateDecrease = () => {
     if (this.state.showResult === true) {
       result = (
         <div> 
-          <p> Start at {this.state.startCount} stitches, decrease to {this.state.endCount} stitches? </p>
-          <h2> {this.state.solution} </h2>
+          {/* <p> Start at {this.state.startCount} stitches, decrease to {this.state.endCount} stitches? </p> */}
+          <h2 data-testid="solution" > {this.state.solution} </h2>
         </div>
       )
     }
@@ -100,6 +100,7 @@ calculateDecrease = () => {
           Starting Stich Count:
           <input
             type="text"
+            data-testid="start-test"
             value={this.state.startCount}
             onChange={this.startCountHandler} />
         </label>
@@ -108,6 +109,7 @@ calculateDecrease = () => {
           End Stich Count:
           <input
             type="text"
+            data-testid="end-test"
             value={this.state.endCount}
             onChange={this.endCountHandler} />
         </label>
@@ -115,7 +117,8 @@ calculateDecrease = () => {
         <button onClick={this.handleClick}>
           Calculate Decrease
         </button>
-        {result}
+        <span>{result}</span>
+        
       </div>
     )
   }
