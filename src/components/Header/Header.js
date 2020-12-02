@@ -1,14 +1,22 @@
 import React from 'react'
-import logo from '../../sophieknits.png'
+import logo from '../../sophieknits-hm.png'
 
 const header = () => {
 
   return (
-    <header className="bg-green sans-serif">
-      <div class="mw9 center pa4 pt5-ns ph7-l">
-      <img src={logo} center alt='avatar' />
-        <h2>Handmade in London</h2>
-      </div>
+    <header class="bg-green sans-serif">
+      <nav class="pa3 pa4-ns">
+        <a 
+          class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns" 
+          href="#" 
+          title="Home">
+            <img src={logo} center alt='avatar' />
+        </a>
+        <div class="tc pb3">
+          <a class="link dim black f1 f3-ns dib mr3" href="#" title="Home">TOOLS</a>
+          <a class="link dim black f1 f3-ns dib mr3" href="#" title="Home">INSTAGRAM</a>
+        </div>
+      </nav>
     </header>
   )
 };

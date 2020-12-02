@@ -94,29 +94,35 @@ calculateDecrease = () => {
     }
 
     return (
-      <div>
-        <h1 class="f-subheadline lh-title"> Stitch Decrease Calculator </h1>
-        <label>
-          Starting Stich Count:
-          <input
+      <div class="pa3 pa4-ns">
+        <h1 className="lh-title"> Stitch Decrease Calculator </h1>
+
+        <div class="measure">
+          <label for="start" class="f3 b db mb2"> Starting Stitch Count </label>
+          <input class="input-reset ba b--black-20 pa2 mb2 db w-100"
             type="text"
             data-testid="start-test"
             value={this.state.startCount}
             onChange={this.startCountHandler} />
-        </label>
+
         <br></br>
-        <label>
-          End Stich Count:
-          <input
+
+          <label for="end" class="f3 b db mb2"> End Stich Count </label>
+          <input class="input-reset ba b--black-20 pa2 mb2 db w-100"
             type="text"
             data-testid="end-test"
             value={this.state.endCount}
             onChange={this.endCountHandler} />
-        </label>
+      
         <br></br>
-        <button onClick={this.handleClick}>
+
+        <button 
+          onClick={this.handleClick}
+          class="f3 link dim br-pill ph3 pv2 mb2 dib black bg-green">
+
           Calculate Decrease
         </button>
+        </div>
         <span>{result}</span>
         
       </div>

@@ -1,14 +1,16 @@
 import React from 'react';
-
-import DecreaseCalculator from './components/DecreaseCalculator/DecreaseCalculator';
-import Header from './components/Header/Header';
 import 'tachyons';
+
+import Header from './components/Header/Header';
+import Card from './components/Card/Card';
+
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <DecreaseCalculator />
+      <Card
+        title="Decrease Calculator" />
     </div>
 
   );
