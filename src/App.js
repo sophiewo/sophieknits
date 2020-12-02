@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import DecreaseCalculator from './components/DecreaseCalculator/DecreaseCalculator'
 
 function App() {
