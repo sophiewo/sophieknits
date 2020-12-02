@@ -95,7 +95,7 @@ calculateDecrease = () => {
 
     return (
       <div>
-        <h1> Stitch Decrease Calculator </h1>
+        <h1 class="f-subheadline lh-title"> Stitch Decrease Calculator </h1>
         <label>
           Starting Stich Count:
           <input
