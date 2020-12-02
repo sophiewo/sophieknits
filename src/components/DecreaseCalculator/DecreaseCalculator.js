@@ -95,8 +95,6 @@ calculateDecrease = () => {
 
     return (
       <div class="pa3 pa4-ns">
-        <h1 className="lh-title"> Stitch Decrease Calculator </h1>
-
         <div class="measure">
           <label for="start" class="f3 b db mb2"> Starting Stitch Count </label>
           <input class="input-reset ba b--black-20 pa2 mb2 db w-100"
@@ -117,10 +115,8 @@ calculateDecrease = () => {
         <br></br>
 
         <button 
-          onClick={this.handleClick}
-          class="f3 link dim br-pill ph3 pv2 mb2 dib black bg-green">
-
-          Calculate Decrease
+          class="f3 link dim ph3 pv2 mb2 dib white bg-black"
+          onClick={this.handleClick} > Calculate Decrease
         </button>
         </div>
         <span>{result}</span>

@@ -14,7 +14,7 @@ const header = () => {
         </a>
         <div class="tc pb3">
           <a class="link dim black f1 f3-ns dib mr3" href="#" title="Home">TOOLS</a>
-          <a class="link dim black f1 f3-ns dib mr3" href="#" title="Home">INSTAGRAM</a>
+          <a class="link dim black f1 f3-ns dib mr3" href="#" title="Instagram">INSTAGRAM</a>
         </div>
       </nav>
     </header>
