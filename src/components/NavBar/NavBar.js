@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../sophieknits-hm.png'
+import NavItem from '../NavItem/NavItem'
 
 const navBar = () => {
 
@@ -14,8 +15,11 @@ const navBar = () => {
           <img src={logo} center alt='SophieKnits_' />
         </a>
         <div class="tc pb3">
-          <a class="link dim black f1 f3-ns dib mr3" href="#" title="Home">TOOLS</a>
-          <a class="link dim black f1 f3-ns dib mr3" href="#" title="Instagram">INSTAGRAM</a>
+      <NavItem
+        label="instagram"
+        title="Instagram"
+        url="https://www.instagram.com/sophieknits_/" />
+      
         </div>
       </nav>
     </header>
