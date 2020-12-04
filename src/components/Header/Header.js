@@ -4,8 +4,9 @@ import logo from '../../sophieknits-hm.png'
 const header = () => {
 
   return (
-    <header class="bg-green sans-serif">
+    <header>    
       <nav class="pa3 pa4-ns">
+        
         <a 
           class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns" 
           href="#" 

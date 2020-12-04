@@ -38,9 +38,8 @@ class DecreaseCalculator extends Component {
   }
 
  endCountHandler = (event) => {
-   let endCount = parseInt(event.target.value)
     this.setState(
-      { endCount: endCount }
+      { endCount: event.target.value }
     )
   }
 
