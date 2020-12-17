@@ -1,12 +1,16 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar'
+import background from '../../assets/img/knit-bg1.jpg'
+
 
 const header = () => {
 
   return (
-    <header>    
+    <article data-name="article-full-bleed-background">
+      <div class="no-repeat center center fixed; background-size: cover" style={{ backgroundImage: `url(${background})` }}>
       <NavBar/>
-    </header>
+      </div>
+    </article>
   )
 };
 

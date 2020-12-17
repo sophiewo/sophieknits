@@ -1,13 +1,15 @@
 import React from 'react';
 import logo from '../../sophieknits-hm.png';
 import NavItem from '../NavItem/NavItem';
+// import bgImages from '../../assets/img/knit-bg1.jpg'
+
 // import ScrollSection from '../ScrollSection/ScollSection';
 // import { ScrollingProvider, Section } from 'react-scroll-section';
 
 const NavBar = () => {
 
   return (
-    <header>
+    <header> 
       <nav class="pa3 pa4-ns">
         <a
           class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns"
