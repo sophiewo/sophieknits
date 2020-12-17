@@ -1,12 +1,10 @@
 import React from 'react';
-import logo from '../../sophieknits-hm.png'
-import NavItem from '../NavItem/NavItem'
+import logo from '../../sophieknits-hm.png';
+import NavItem from '../NavItem/NavItem';
+// import ScrollSection from '../ScrollSection/ScollSection';
+// import { ScrollingProvider, Section } from 'react-scroll-section';
 
-const navBar = () => {
-
-  // skipDownHandler() {
-  //   return "Hello"
-  // }
+const NavBar = () => {
 
   return (
     <header>
@@ -20,17 +18,21 @@ const navBar = () => {
 
         <div class="tc pb3">
           <NavItem
-            label="instagram"
-            title="Instagram"
+            title="instagram"
+            name="Instagram"
             url="https://www.instagram.com/sophieknits_/" />
           <NavItem
-            label="tools"
-            title="Tools" />
-
+            title="tools"
+            name="Tools"
+            url="/" />
+          <NavItem
+            title="github"
+            name="Github"
+            url="https://github.com/sophiewo/sophieknits" />
         </div>
       </nav>
     </header>
   )
 };
 
-export default navBar;
+export default NavBar;
