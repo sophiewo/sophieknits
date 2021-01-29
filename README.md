@@ -1,4 +1,4 @@
-<p align="center"> <img src="https://github.com/sophiewo/sophieknits/blob/master/src/sophieknits-hm.png" /> </p>
+<p align="center"> <img src="https://github.com/sophiewo/sophieknits/blob/main/src/sophieknits-hm.png" /> </p>
 
 <h2 align="center"> A series of knitting tools for budding or seasoned knitwear designers. </h2>
 
