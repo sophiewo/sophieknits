@@ -1,5 +1,4 @@
 import React from 'react';
-import 'tachyons';
 
 import Header from './components/Header/Header';
 import Card from './components/Card/Card';
