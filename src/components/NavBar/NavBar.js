@@ -12,7 +12,7 @@ const NavBar = () => {
     <header> 
       <nav class="pa3 pa4-ns">
         <a
-          class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns"
+          class="link dim b f1 f-headline-ns tc db mb3 mb4-ns"
           href="/"
           title="Home">
           <img src={logo} center alt='SophieKnits_' />

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { calculateDecrease } from './calculatorUtil';
 
 class DecreaseCalculator extends Component {
 
@@ -19,8 +20,9 @@ class DecreaseCalculator extends Component {
       showResult: true }
     )
     this.stitchParser()
-    this.calculateDecrease()
-    
+    this.setState(
+      { solution: calculateDecrease(this.state.startCount, this.state.endCount)}
+    )
   }
 
   stitchParser = () => {
@@ -43,60 +45,22 @@ class DecreaseCalculator extends Component {
     )
   }
 
-calculateDecrease = () => {
-
-    let start = this.state.startCount
-    let end = this.state.endCount
-    let decrease = start - end // 15
-    let remainder = start % decrease // 5
-    let totalSegments = Math.floor(start / decrease)  // 1
-    let repeat1 = decrease - remainder
-    let stitches1 = totalSegments - 2
-    let repeat2 = remainder
-    let stitches2 = totalSegments - 1
-    let solution = ''
-
-    if ( end === start / 2 ) {
-        solution = `[ k2tog ] x ${decrease}times`  
-    } else if (repeat1 === 1 && repeat2 > 1) {
-        solution = (`[ k${stitches1}, k2tog ], [ k${stitches2}, k2tog ] x ${repeat2}times`)
-    } else if (repeat1 === 0 && repeat2 > 1) {
-      solution = (`[ k${stitches2}, k2tog ] x ${repeat2}times`)
-    } else if (repeat1 > 1 && repeat2 === 0) {
-      solution = (`[ k${stitches1}, k2tog ] x ${repeat1}times`)
-    } else if (repeat1 > 1 && repeat2 === 1) {
-        solution = (`[ k${stitches1}, k2tog ] x ${repeat1}times, [ k${stitches2}, k2tog ]`)
-    } else if (stitches1 === 0) {
-        solution = (`[ k2tog ] x ${repeat1}times, [ k${stitches2}, k2tog ]`)
-    } else if (stitches2 === 0) {
-      solution = (`[ k${stitches1}, k2tog ] x ${repeat1}times, [ k2tog ] x ${repeat2}times`)
-    } else {
-      solution = (`[ k${stitches1}, k2tog ] x ${repeat1}times, [ k${stitches2}, k2tog ] x ${repeat2}times`)
-}
-
-  
-    this.setState(
-      { solution: solution }
-    )
-  }
-
   render() {
 
     let result = ''
     if (this.state.showResult === true) {
       result = (
         <div> 
-          {/* <p> Start at {this.state.startCount} stitches, decrease to {this.state.endCount} stitches? </p> */}
           <h2 data-testid="solution" > {this.state.solution} </h2>
         </div>
       )
     }
 
     return (
-      <div class="pa3 pa4-ns">
-        <div class="measure">
-          <label for="start" class="f3 b db mb2"> Starting Stitch Count </label>
-          <input class="input-reset ba b--black-20 pa2 mb2 db w-100"
+      <div className="pa3 pa4-ns">
+        <div className="measure">
+          <label htmlFor="start" className="f3 b db mb2"> Starting Stitch Count </label>
+          <input className="input-reset ba b--black-20 pa2 mb2 db w-100"
             type="text"
             data-testid="start-test"
             value={this.state.startCount}
@@ -104,8 +68,8 @@ calculateDecrease = () => {
 
         <br></br>
 
-          <label for="end" class="f3 b db mb2"> End Stich Count </label>
-          <input class="input-reset ba b--black-20 pa2 mb2 db w-100"
+          <label htmlFor="end" className="f3 b db mb2"> End Stitch Count </label>
+          <input className="input-reset ba b--black-20 pa2 mb2 db w-100"
             type="text"
             data-testid="end-test"
             value={this.state.endCount}
@@ -114,7 +78,7 @@ calculateDecrease = () => {
         <br></br>
 
         <button 
-          class="f3 link dim ph3 pv2 mb2 dib white bg-black"
+          className="f3 link dim ph3 pv2 mb2 dib white bg-black"
           onClick={this.handleClick} > Calculate Decrease
         </button>
         </div>
