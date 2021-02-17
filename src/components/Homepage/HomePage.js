@@ -2,12 +2,11 @@ import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
-import logo from '../../sophieknits-hm.png';
-
+import LogoButton from '../Button/LogoButton'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 3,
   }
 
 }));
@@ -18,29 +17,79 @@ export default function HomePage() {
   return (
     <div className={classes.root}>
       <Grid container xs={12} spacing={1}>
-        <Grid item xs>
-          <a
-            href="/"
-            title="Home">
-            <img src={logo} center alt='SophieKnits_' />
-          </a>
+        <Grid item xs={12} sm={6} md={4} >
+          <LogoButton/>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} >
+          <LogoButton />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} >
+          <LogoButton />
         </Grid>
 
-            <Grid item xs={12}>
-              <a
+        {/* <Grid item xs={4} >
+              <Button 
                 href="/"
                 title="Home">
                 <img src={logo} center alt='SophieKnits_' />
-              </a>
+              </Button>
             </Grid>
 
-        <Grid item xs={6}>
+        <Grid item xs={4}>
           <a
             href="/"
             title="Home">
             <img src={logo} center alt='SophieKnits_' />
           </a>
         </Grid>
+
+        <Grid item xs={4}>
+          <a
+            href="/"
+            title="Home">
+            <img src={logo} center alt='SophieKnits_' />
+          </a>
+        </Grid>
+
+        <Grid item xs={4}>
+          <a
+            href="/"
+            title="Home">
+            <img src={logo} center alt='SophieKnits_' />
+          </a>
+        </Grid>
+
+        <Grid item xs={4}>
+          <a
+            href="/"
+            title="Home">
+            <img src={logo} center alt='SophieKnits_' />
+          </a>
+        </Grid>
+
+        <Grid item xs={4}>
+          <a
+            href="/"
+            title="Home">
+            <img src={logo} center alt='SophieKnits_' />
+          </a>
+        </Grid>
+
+        <Grid item xs={4}>
+          <a
+            href="/"
+            title="Home">
+            <img src={logo} center alt='SophieKnits_' />
+          </a>
+        </Grid>
+
+        <Grid item xs={4}>
+          <a
+            href="/"
+            title="Home">
+            <img src={logo} center alt='SophieKnits_' />
+          </a>
+        </Grid> */}
 
             </Grid>
             </div>
