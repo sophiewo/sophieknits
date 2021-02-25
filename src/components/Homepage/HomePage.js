@@ -16,105 +16,26 @@ export default function HomePage() {
 
   return (
     <div className={classes.root}>
-      <Grid container xs={12} spacing={1}>
-        <Grid item xs={12} sm={6} md={4} >
-          <LogoButton/>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} >
-          <LogoButton />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} >
-          <LogoButton />
+      <Grid container xs={12} spacing={0}>
+        <Grid item xs={2} />
+        <Grid item xs={8} container >
+          <Grid item xs={4}  >
+            <LogoButton/>
+          </Grid>
+          <Grid item xs={4} >
+            hiyaaa
+          </Grid>
+          <Grid item xs={4} >
+          hiyaaaa        
+          </Grid>
+
+          <Grid item xs={2} />
         </Grid>
 
-        {/* <Grid item xs={4} >
-              <Button 
-                href="/"
-                title="Home">
-                <img src={logo} center alt='SophieKnits_' />
-              </Button>
-            </Grid>
-
-        <Grid item xs={4}>
-          <a
-            href="/"
-            title="Home">
-            <img src={logo} center alt='SophieKnits_' />
-          </a>
-        </Grid>
-
-        <Grid item xs={4}>
-          <a
-            href="/"
-            title="Home">
-            <img src={logo} center alt='SophieKnits_' />
-          </a>
-        </Grid>
-
-        <Grid item xs={4}>
-          <a
-            href="/"
-            title="Home">
-            <img src={logo} center alt='SophieKnits_' />
-          </a>
-        </Grid>
-
-        <Grid item xs={4}>
-          <a
-            href="/"
-            title="Home">
-            <img src={logo} center alt='SophieKnits_' />
-          </a>
-        </Grid>
-
-        <Grid item xs={4}>
-          <a
-            href="/"
-            title="Home">
-            <img src={logo} center alt='SophieKnits_' />
-          </a>
-        </Grid>
-
-        <Grid item xs={4}>
-          <a
-            href="/"
-            title="Home">
-            <img src={logo} center alt='SophieKnits_' />
-          </a>
-        </Grid>
-
-        <Grid item xs={4}>
-          <a
-            href="/"
-            title="Home">
-            <img src={logo} center alt='SophieKnits_' />
-          </a>
-        </Grid> */}
 
             </Grid>
             </div>
 
 
-
-    //     <Grid item xs={6}>
-    //       <Paper className={classes.paper}>xs=6</Paper>
-    //     </Grid>
-    //     <Grid item xs={6}>
-    //       <Paper className={classes.paper}>xs=6</Paper>
-    //     </Grid>
-    //     <Grid item xs={3}>
-    //       <Paper className={classes.paper}>xs=3</Paper>
-    //     </Grid>
-    //     <Grid item xs={3}>
-    //       <Paper className={classes.paper}>xs=3</Paper>
-    //     </Grid>
-    //     <Grid item xs={3}>
-    //       <Paper className={classes.paper}>xs=3</Paper>
-    //     </Grid>
-    //     <Grid item xs={3}>
-    //       <Paper className={classes.paper}>xs=3</Paper>
-    //     </Grid>
-    //   </Grid>
-    // </div>
   );
 }
