@@ -54,7 +54,7 @@ class DecreaseCalculator extends Component {
           <h2 data-testid="solution" > {this.state.solution} </h2>
         </div>
       )
-    }
+    } 
 
     return (
       <div className="pa3 pa4-ns">

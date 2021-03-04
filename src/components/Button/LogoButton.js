@@ -1,22 +1,8 @@
-import React  from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
-import logo from '../../sophieknits-hm.png';
-import testImg from '../../sophieknits.png';
-
-const images = [
-  {
-    source: testImg,
-    title: 'Logo',
-    width: '100%'
-  },
-  {
-    source: logo,
-    title: 'Other Logo',
-    width: '100%'
-  }
-]
+import images from './images'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -91,28 +77,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-  export default function ButtonLogo() {
+export default function LogoButton() {
 
-    // const [image, setImage] = useState(logo);
-    const classes = useStyles();
-    
-    return (
-      <div className={classes.root}> 
-      {images.map((image) => (
+  const classes = useStyles();
+
+  return (
+
+    <div className={classes.root}>
+      {images.map(({ id, source, width }) => (
         <ButtonBase
-          key={image.title}
+          key={id}
           className={classes.image}
-          style={{width: image.width}}
-          src={image.source}
-          >
-          <img 
-            src={image.source} alt="timeline" width="100%" 
+          style={{ width: width }}
+        >
+          <img
+            src={process.env.PUBLIC_URL + source} alt="timeline" width="100%"
             className={classes.image}
           />
           <span className={classes.imageBackdrop} />
-      </ButtonBase>
-      ))}             
-      </div>
-    )
-  };
+        </ButtonBase>
+      ))}
+    </div>
+  )
+};
 
