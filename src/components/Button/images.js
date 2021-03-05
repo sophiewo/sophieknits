@@ -15,25 +15,25 @@ const images = [
     {
       id: 3,
       source: 'img/sk_3.jpeg',
-      title: 'Purl Soho',
+      title: 'Purl Soho Blanket',
       width: '100%'
   },
   {
     id: 4,
-    source: 'img/sk_4.jpg',
-    title: 'Purl Soho',
+    source: 'img/sk_5.jpeg',
+    title: 'Wool and The Gang',
     width: '100%'
   },
   {
     id: 5,
-    source: 'img/sk_5.jpeg',
-    title: 'Purl Soho',
+    source: 'img/sk_4.jpg',
+    title: 'Gregoria Fibers',
     width: '100%'
   },
   {
     id: 6,
     source: 'img/sk_6.jpeg',
-    title: 'Purl Soho',
+    title: 'Gregoria Fibers',
     width: '100%'
   }
   ]

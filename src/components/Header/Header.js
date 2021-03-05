@@ -7,11 +7,6 @@ import Grid from '@material-ui/core/Grid'
 const header = () => {
 
   return (
-    // <article data-name="article-full-bleed-background">
-    //   <div class="no-repeat center center fixed; background-size: cover" style={{ backgroundImage: `url(${background})` }}>
-    //   <NavBar/>
-    //   </div>
-    // </article>
 
     <div>
       <Grid container xs={12} spacing={0}>
