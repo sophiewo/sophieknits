@@ -21,18 +21,11 @@ export default function HomePage() {
       <Grid container xs={12} spacing={0}>
         <Grid item xs={2} />
         <Grid item xs={8} container >
-          <Grid item xs={4}  >
             <LogoButton />
-          </Grid>
-          <Grid item xs={4} >
-          </Grid>
-          <Grid item xs={4} >
-          </Grid>
           <Grid item xs={2} />
         </Grid>
       </Grid>
     </div>
-
 
   );
 }
