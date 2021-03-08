@@ -1,15 +1,31 @@
-import React from 'react';
+import * as React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
-const homepage = () => {
+import LogoButton from '../Button/LogoButton'
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 3,
+  }
+
+}));
+
+export default function HomePage() {
+  const classes = useStyles();
 
   return (
-    <nav class="pa3 pa4-ns">
-      <a
-        class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns"
-        href="/"
-        title="Home">
-        <img src={logo} center alt='SophieKnits_' />
-      </a>
-      </nav>
-  )
+
+    <div className={classes.root}>
+      <Grid container xs={12} spacing={0}>
+        <Grid item xs={2} />
+        <Grid item xs={8} container >
+            <LogoButton />
+          <Grid item xs={2} />
+        </Grid>
+      </Grid>
+    </div>
+
+  );
 }

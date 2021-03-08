@@ -2,12 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from '@material-ui/styles';
 import './index.css'
+import theme from './theme';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ThemeProvider theme={theme}>
+    <CssBaseline/>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </ThemeProvider>
+  ,
   document.getElementById('root')
 );
 
