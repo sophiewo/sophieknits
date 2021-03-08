@@ -1,5 +1,4 @@
 import React from 'react'
-// import NavBar from '../NavBar/NavBar'
 import logo from '../../SophieKnits_FullBleed.png'
 import Grid from '@material-ui/core/Grid'
 
@@ -14,7 +13,7 @@ const header = () => {
         <Grid item xs={8} container >
           <Grid item xs={4}></Grid>
           <Grid item xs={4}>
-            <img src={logo} width="97%" />
+            <img src={logo} width="97%" alt="logo" />
           </Grid>
           <Grid item xs={4}></Grid>
           <Grid item xs={2} />
