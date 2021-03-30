@@ -47,7 +47,7 @@ export default function LogoButton() {
     <div className={classes.root}>
       <Grid container xs={12} spacing={1}>
         {images.map(({ id, source, width, title }) => (
-          <Grid item xs={4}>
+          <Grid item xs={12} md={6} lg={4}>
             <ButtonBase
               key={id}
               className={classes.image}

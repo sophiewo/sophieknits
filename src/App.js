@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <HomePage />
+      <br></br>
       <Card title="Decrease Calculator" />
     </div>
 
