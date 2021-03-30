@@ -1,11 +1,47 @@
 import React, { Component } from 'react';
 import { calculateDecrease } from './calculatorUtil';
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import CardHeader from '@material-ui/core/CardHeader'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import Collapse from '@material-ui/core/Collapse';
+import clsx from 'clsx';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+
+
+import { withStyles } from "@material-ui/core/styles";
+import { CardActions } from '@material-ui/core';
+
+const styles = theme => ({
+  root: {
+      width: '50ch',
+    },
+  textf: {
+    margin: "10px",
+    botton: "10px",
+    width: '25ch'
+  },
+  expand: {
+    transform: 'rotate(180deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: 'rotate(0deg)',
+  },
+
+});
 
 class DecreaseCalculator extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      searchNodes: "",
       startCount: "",
       endCount: "",
       showResult: false,
@@ -16,12 +52,13 @@ class DecreaseCalculator extends Component {
   }
 
   handleClick() {
-    this.setState( {
-      showResult: true }
+    this.setState({
+      showResult: true
+    }
     )
     this.stitchParser()
     this.setState(
-      { solution: calculateDecrease(this.state.startCount, this.state.endCount)}
+      { solution: calculateDecrease(this.state.startCount, this.state.endCount) }
     )
   }
 
@@ -39,7 +76,7 @@ class DecreaseCalculator extends Component {
     )
   }
 
- endCountHandler = (event) => {
+  endCountHandler = (event) => {
     this.setState(
       { endCount: event.target.value }
     )
@@ -47,46 +84,77 @@ class DecreaseCalculator extends Component {
 
   render() {
 
+    const { classes } = this.props;
+
     let result = ''
     if (this.state.showResult === true) {
       result = (
-        <div> 
-          <h2 data-testid="solution" > {this.state.solution} </h2>
+        <div>
+          <p data-testid="solution" > {this.state.solution} </p>
         </div>
       )
-    } 
+    }
 
     return (
-      <div className="pa3 pa4-ns">
-        <div className="measure">
-          <label htmlFor="start" className="f3 b db mb2"> Starting Stitch Count </label>
-          <input className="input-reset ba b--black-20 pa2 mb2 db w-100"
-            type="text"
-            data-testid="start-test"
-            value={this.state.startCount}
-            onChange={this.startCountHandler} />
+      <div className={classes.root}>
+        <Card >
+          <CardHeader
+            title="Decrease Calculator"
+            subheader="Enter stitches"
+          />
 
-        <br></br>
+          <CardContent >
 
-          <label htmlFor="end" className="f3 b db mb2"> End Stitch Count </label>
-          <input className="input-reset ba b--black-20 pa2 mb2 db w-100"
-            type="text"
-            data-testid="end-test"
-            value={this.state.endCount}
-            onChange={this.endCountHandler} />
-      
-        <br></br>
+            <TextField className={classes.textf}
+              data-testid="start-test"
+              value={this.state.startCount}
+              onChange={this.startCountHandler}
+              id="filled-number"
+              label="Starting Stitch Count"
+              type="number"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="filled"
+            />
 
-        <button 
-          className="f3 link dim ph3 pv2 mb2 dib white bg-black"
-          onClick={this.handleClick} > Calculate Decrease
-        </button>
-        </div>
-        <span>{result}</span>
-        
+            <TextField className={classes.textf}
+              type="number"
+              data-testid="end-test"
+              value={this.state.endCount}
+              onChange={this.endCountHandler}
+              id="filled-number"
+              label="End Stitch Count"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="filled"
+            />
+
+<CardActions>
+            <Button 
+            variant="outlined"
+            onClick={this.handleClick}
+            aria-expanded={this.state.showResult}
+            aria-label="show more"
+
+>
+                Calculate Decrease <ExpandMoreIcon className={clsx(classes.expand, {
+              [classes.expandOpen]: this.state.showResult,
+            })} />
+
+            </Button>
+            </CardActions>  
+            <Collapse in={this.state.showResult} unmountOnExit>
+            
+            {result}
+            </Collapse>
+          </CardContent>
+
+        </Card>
       </div>
     )
   }
 }
 
-export default DecreaseCalculator;
+export default withStyles(styles, { withTheme: true })(DecreaseCalculator);
